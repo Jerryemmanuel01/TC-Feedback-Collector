@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.send("Working on feedback Server");
+  res.send("Working on feedback collecetor Server");
 });
 
 app.listen(process.env.PORT, () => {
