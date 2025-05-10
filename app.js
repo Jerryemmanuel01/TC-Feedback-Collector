@@ -22,6 +22,6 @@ app.get("/", (req, res) => {
   res.send("Working on feedback collecetor Server");
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server Listening on port ${PORT}`);
 });
