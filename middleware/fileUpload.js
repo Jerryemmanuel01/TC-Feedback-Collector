@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, cb) => {
     const generateUniqueName =
-      Date.now() + "_" + Math.round(Math.random() * IE9);
+      Date.now() + "_" + Math.round(Math.random() * 1E9);
     const ext = path.extname(file.originalname);
     const fileOriginalName = req.body.name || "file";
     cb(null, fileOriginalName + "_" + generateUniqueName + ext);
@@ -34,7 +34,7 @@ const checkFileType = (req, file, cb) => {
 const upload = multer({
   storage,
   limits: { filesize: 1024 * 1024 * 10 },
-  checkFileType,
+  fileFilter: checkFileType,
 });
 
 export default upload;
