@@ -1,6 +1,6 @@
 import express from "express";
 import path from "node:path";
-import upload from "./middleware/fileUpload.js";
+// import upload from "./middleware/fileUpload.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
@@ -14,15 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
-app.post("/upload", upload.single("file"), (req, res) => {
-  if (!req.get) {
-    return res.status(400).json({ message: "No file uploaded" });
-  }
-  res.status(200).json({
-    message: "File uploaded successfully",
-    file: `uploads/${req.file.filename}`,
-  });
-});
+
 
 
 app.get("/", (req, res) => {
