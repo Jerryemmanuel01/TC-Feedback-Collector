@@ -7,6 +7,4 @@ import { saveFeedback } from '../controllers/SaveFeedback.js'
 export const router = express.Router()
 
 // A post route that include the path, the validator middleware and the feedback controller
-router.post('/', validateFeedback, saveFeedback, (req, res) => {
-    res.send('Thank you.')
-})
+router.post('/', validateFeedback, saveFeedback)
