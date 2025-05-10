@@ -1,6 +1,6 @@
 import multer from "multer";
 import path from "path";
-import fs from "fs";
+import fs from "fs/promises";
 
 fs.mkdirSync("uploads", { recursive: true });
 
