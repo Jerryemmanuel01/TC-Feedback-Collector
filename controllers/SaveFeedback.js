@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const localDataPath = path.join("uploads", "feedbacks.json");
+const localDataPath = path.join("data", "feedbacks.json");
 
 export const saveFeedback = (req, res) => {
   const { name, email, message } = req.body;
